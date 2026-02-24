@@ -1,0 +1,195 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ── Retro background ── */
+body {
+  background-color: #008080;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(0,0,0,0.05) 31px, rgba(0,0,0,0.05) 32px),
+    repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(0,0,0,0.05) 31px, rgba(0,0,0,0.05) 32px);
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* ── Win95 bevel card ── */
+.retro-card {
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: inset -1px -1px 0 #404040, inset 1px 1px 0 #dfdfdf;
+}
+
+.retro-card-inset {
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #dfdfdf;
+}
+
+/* ── Retro window title bar ── */
+.retro-titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+/* ── Buttons ── */
+.retro-btn {
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: inset -1px -1px 0 #404040, inset 1px 1px 0 #dfdfdf;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  color: #000;
+  transition: none;
+  white-space: nowrap;
+}
+
+.retro-btn:active, .retro-btn.active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #dfdfdf;
+}
+
+.retro-btn:hover {
+  background: #e0ddd5;
+}
+
+.retro-btn-primary {
+  background: #000080;
+  color: #fff;
+  border-color: #4040c0 #000040 #000040 #4040c0;
+}
+
+.retro-btn-primary:hover {
+  background: #0000a0;
+}
+
+.retro-btn-danger {
+  background: #800000;
+  color: #fff;
+  border-color: #c04040 #400000 #400000 #c04040;
+}
+
+.retro-btn-sm {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+}
+
+/* ── Input fields ── */
+.retro-input {
+  background: #fff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #404040;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  color: #000;
+  outline: none;
+  width: 100%;
+}
+
+.retro-input:focus {
+  border-color: #000080 #c0c0c0 #c0c0c0 #000080;
+}
+
+/* ── Tabs ── */
+.retro-tab {
+  background: #b8b4ac;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  border-bottom: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  color: #000;
+  margin-right: 2px;
+  position: relative;
+  bottom: -2px;
+}
+
+.retro-tab.active {
+  background: #d4d0c8;
+  z-index: 10;
+  font-weight: bold;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-track { background: #c0c0c0; }
+::-webkit-scrollbar-thumb { background: #808080; border: 2px solid #c0c0c0; }
+::-webkit-scrollbar-button { background: #c0c0c0; height: 16px; border: 2px solid; border-color: #fff #808080 #808080 #fff; }
+
+/* ── Typography ── */
+.retro-title {
+  font-family: 'VT323', monospace;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000080;
+}
+
+/* ── Score badges ── */
+.score-badge {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  padding: 0 6px;
+  border: 1px solid #808080;
+}
+
+/* ── Map container ── */
+.leaflet-container {
+  z-index: 0;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Drag handle ── */
+.drag-handle {
+  cursor: grab;
+  color: #808080;
+  padding: 0 4px;
+  user-select: none;
+}
+.drag-handle:active { cursor: grabbing; }
+
+/* ── Spot row ── */
+.spot-row {
+  border-bottom: 1px solid #b0aca4;
+  transition: background 0.1s;
+}
+.spot-row:hover { background: #dcdad2; }
+.spot-row.selected { background: #c8d8f0; border-left: 3px solid #000080; }
+
+/* ── Progress bar ── */
+.retro-progress {
+  background: #808080;
+  border: 1px solid #404040;
+  height: 14px;
+}
+.retro-progress-bar {
+  background: #000080;
+  height: 100%;
+  transition: width 0.3s;
+}
+
+/* ── Blink animation ── */
+@keyframes blink { 50% { opacity: 0; } }
+.blink { animation: blink 1s step-end infinite; }
+
+/* ── Star rating ── */
+.star { color: #ffd700; }
+.star-empty { color: #808080; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .retro-tab { font-size: 0.7rem; padding: 3px 7px; }
+}
